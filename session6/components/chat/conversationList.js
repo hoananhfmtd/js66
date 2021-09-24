@@ -7,6 +7,7 @@ class ConversationList {
     $createConversationForm = new CreateConversationForm();
 
     onConversationItemClick;
+    conversationItems = [];
 
     constructor() {
         this.$btnCreateConversation.innerHTML = "+ Create Conversation";
@@ -36,7 +37,18 @@ class ConversationList {
                 users: users,
             });
         });
+        this.conversationItems.push(item);
         this.$container.appendChild(item.$container);
+    };
+
+    setActiveConversation = (conversation) => {
+        this.conversationItems.forEach(item => {
+            if(item.id === conversation.id) {
+                item.setHighLight(true);
+            } else {
+                item.setHighLight(false);
+            }
+        });
     };
 }
 

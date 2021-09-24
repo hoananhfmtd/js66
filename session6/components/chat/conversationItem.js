@@ -24,6 +24,16 @@ class ConversationItem {
             listener(this.id, this.name, this.users)
         };
     };
+
+    setHighLight = (isHighLighted) => {
+        if (isHighLighted) {
+            this.$container.style.background = 'blue'
+            this.$container.style.color = 'white';
+        } else {    
+            this.$container.style.background = 'white';
+            this.$container.style.color = 'black';
+        }
+    }
 }
 
 export {ConversationItem}

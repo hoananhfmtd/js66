@@ -19,7 +19,8 @@ class Chat {
 
     setActiveConversation = (conversation) => {
         this.activeConversation = conversation;
-        console.log(this.activeConversation);
+        this.$titleBar.setName(conversation.name);
+        this.$conversationList.setActiveConversation(this.activeConversation);
     };
 
     subcribeConversations = () => {
